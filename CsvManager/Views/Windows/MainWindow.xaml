@@ -1,0 +1,17 @@
+﻿<windows:RBaseWindow x:TypeArguments="viewModels:MainVm" x:Class="CsvManager.Views.Windows.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:local="clr-namespace:CsvManager"
+                     xmlns:windows="clr-namespace:CsvManager.Views.Windows"
+                     xmlns:viewModels="clr-namespace:CsvManager.ViewModels"
+                     xmlns:ucs="clr-namespace:CsvManager.Views.Ucs"
+                     mc:Ignorable="d"
+                     Title="Csv file manager (Mohammad Sadegh Salimian)"  Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <TabControl>
+        <TabItem Header="Merge Csv files">
+            <ucs:CsvMergerUc x:Name="CsvMergerUc"></ucs:CsvMergerUc>
+        </TabItem>
+    </TabControl>
+</windows:RBaseWindow>
