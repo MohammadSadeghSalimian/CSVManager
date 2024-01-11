@@ -9,13 +9,14 @@ namespace CsvManager.ViewModels
         
         protected readonly IKeyContainer KeyContainer;
         protected readonly IMediator Mediator;
+        protected readonly IMessageUnit MessageUnit;
       
-        protected BaseViewModel(IKeyContainer keyContainer,IMediator mediator)
+        protected BaseViewModel(IKeyContainer keyContainer,IMediator mediator,IMessageUnit messageUnit)
         {
          
             KeyContainer = keyContainer;
             Mediator = mediator;
-           
+            MessageUnit = messageUnit;
         }
 
         protected virtual void SetupProperties()

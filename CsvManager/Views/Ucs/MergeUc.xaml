@@ -1,0 +1,15 @@
+﻿<local:RBaseUc x:TypeArguments="viewModels:MergeCsvVm" x:Class="CsvManager.Views.Ucs.MergeUc"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+               xmlns:local="clr-namespace:CsvManager.Views.Ucs"
+               xmlns:viewModels="clr-namespace:CsvManager.ViewModels"
+               mc:Ignorable="d" 
+               d:DesignHeight="100" d:DesignWidth="450" Background="WhiteSmoke">
+    <Grid>
+        <GroupBox Style="{StaticResource MyGroupBoxStyle}" Header="Merge Csv files">
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource MyButtonStyle}" Content="Merge" x:Name="MergeBtn"/>
+        </GroupBox>
+    </Grid>
+</local:RBaseUc>

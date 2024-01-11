@@ -1,9 +1,8 @@
-﻿using System.Reflection;
-using Autofac;
+﻿using Autofac;
+using CsvManager.Core.Services;
 using CsvManager.ViewModels;
 using CsvManager.Views.Ucs;
 using CsvManager.Views.Windows;
-using MediatR;
 using MediatR.Extensions.Autofac.DependencyInjection;
 using MediatR.Extensions.Autofac.DependencyInjection.Builder;
 using ReactiveUI;
@@ -40,6 +39,9 @@ namespace CsvManager.Services
             _builder.RegisterType<KeyContainer>().As<IKeyContainer>().SingleInstance();
             _builder.RegisterType<Settings>().As<ISettings>().SingleInstance();
             _builder.RegisterType<DialogBuilder>().As<ICommonDialogBuilder>().SingleInstance();
+            _builder.RegisterType<DatabaseLiteManager>().As<IDatabaseManager>().SingleInstance();
+
+
             var configuration = MediatRConfigurationBuilder
                 .Create(typeof(AppBootStrap).Assembly)
                 .WithAllOpenGenericHandlerTypesRegistered() // Register all handlers by convention
@@ -53,7 +55,8 @@ namespace CsvManager.Services
         private void RegisterViews()
         {
             _builder.RegisterType<MainWindow>().As<IViewFor<MainVm>>();
-            _builder.RegisterType<CsvMergerUc>().As<IViewFor<MergeVm>>();
+            _builder.RegisterType<DataCreatorUc>().As<IViewFor<DataCreatorUc>>();
+            
         }
 
          
@@ -61,7 +64,9 @@ namespace CsvManager.Services
         private void RegisterViewModels()
         {
             _builder.RegisterType<MainVm>().AsSelf().SingleInstance();
-            _builder.RegisterType<MergeVm>().AsSelf().SingleInstance();
+            _builder.RegisterType<DataCreatorVm>().AsSelf().SingleInstance();
+            _builder.RegisterType<SqLiteDatabaseVm>().AsSelf().SingleInstance();
+            _builder.RegisterType<MergeCsvVm>().AsSelf().SingleInstance();
           
 
         }

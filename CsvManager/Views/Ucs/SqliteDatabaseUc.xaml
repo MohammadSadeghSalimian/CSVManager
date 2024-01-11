@@ -1,0 +1,33 @@
+﻿<local:RBaseUc x:TypeArguments="viewModels:SqLiteDatabaseVm" x:Class="CsvManager.Views.Ucs.SqLiteDatabaseUc"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+               xmlns:local="clr-namespace:CsvManager.Views.Ucs"
+               xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+               xmlns:viewModels="clr-namespace:CsvManager.ViewModels"
+               mc:Ignorable="d" 
+               d:DesignHeight="250" d:DesignWidth="450" Background="WhiteSmoke">
+    <GroupBox Header="SQLite database" Style="{StaticResource MyGroupBoxStyle}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource MyLabelStyle2}"  Content="Table Name:"/>
+            <TextBox x:Name="TableNameTxt" Grid.Row="0" Grid.Column="1" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource MyLabelStyle2}"  Content="Ignore these columns:"/>
+            <TextBox  x:Name="IgnoredColumnsTxt" Grid.Row="1" Grid.Column="1" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource MyLabelStyle2}"  Content="Peak Reference Date:"/>
+            <xctk:DateTimePicker x:Name="ReferencedDate" Grid.Row="2"  Grid.Column="1" Style="{StaticResource MyDateTimePickerStyle}" ></xctk:DateTimePicker>
+
+            <Button Grid.Row="3" Grid.Column="1"  Style="{StaticResource MyButtonStyle}" Content="Convert" x:Name="ConvertBtn"/>
+        </Grid>
+    </GroupBox>
+</local:RBaseUc>

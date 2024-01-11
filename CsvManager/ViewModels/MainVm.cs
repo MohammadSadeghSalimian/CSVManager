@@ -9,16 +9,16 @@ namespace CsvManager.ViewModels
     {
        
 
-        public MainVm( IKeyContainer keyContainer,IMediator mediator) : base(keyContainer,mediator)
+        public MainVm( IKeyContainer keyContainer,IMediator mediator, IMessageUnit messageUnit) : base(keyContainer,mediator,messageUnit)
         {
            
             SetupProperties();
         }
 
-        public MergeVm?  MergeVm { get;private set; }
+        public MergeCsvVm?  MergeVm { get;private set; }
         protected sealed override void SetupProperties()
         {
-            MergeVm = Locator.Current.GetService<MergeVm>() ??
+            MergeVm = Locator.Current.GetService<MergeCsvVm>() ??
                       throw new ApplicationException("MergeVM must not be null");
 
         }

@@ -11,7 +11,7 @@
                      Title="Csv file manager (Mohammad Sadegh Salimian)"  Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <TabControl>
         <TabItem Header="Merge Csv files">
-            <ucs:CsvMergerUc x:Name="CsvMergerUc"></ucs:CsvMergerUc>
+            <ucs:DataCreatorUc x:Name="CsvMergerUc"></ucs:DataCreatorUc>
         </TabItem>
     </TabControl>
 </windows:RBaseWindow>
