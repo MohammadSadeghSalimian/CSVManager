@@ -18,13 +18,22 @@ public sealed class SqLiteDatabaseVm : BaseViewModelWithProgress
     public SqLiteDatabaseVm(IKeyContainer keyContainer, IMediator mediator, IMessageUnit messageUnit) : base(keyContainer, mediator,messageUnit)
     {
         SetupCommands();
+        SetupProperties();
     }
-    
+
+   
+
     [Reactive] public string? IgnoredColumns { get; set; }
     [Reactive] public DateTime? PickedDateTime { get; set; }
     [Reactive] public string? TableName { get; set; }
 
     public ReactiveCommand<Unit, Unit>? ConvertToDatabaseCmd { get; private set; }
+    protected override void SetupProperties()
+    {
+        this.TableName = "Raw Data";
+        this.PickedDateTime=DateTime.Today;
+
+    }
     protected override void SetupCommands()
     {
         ConvertToDatabaseCmd = ReactiveCommand.CreateFromTask(Convert);

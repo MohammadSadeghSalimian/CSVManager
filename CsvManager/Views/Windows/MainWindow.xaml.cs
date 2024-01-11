@@ -27,7 +27,7 @@ namespace CsvManager.Views.Windows
 
         protected override void SetupElements(CompositeDisposable d)
         {
-            this.OneWayBind(this.ViewModel, x => x.MergeVm, v => v.CsvMergerUc.ViewModel).DisposeWith(d);
+            this.OneWayBind(this.ViewModel, x => x.DataCreatorVm, v => v.CsvMergerUc.ViewModel).DisposeWith(d);
 
         }
     }

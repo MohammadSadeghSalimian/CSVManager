@@ -55,7 +55,7 @@ namespace CsvManager.Services
         private void RegisterViews()
         {
             _builder.RegisterType<MainWindow>().As<IViewFor<MainVm>>();
-            _builder.RegisterType<DataCreatorUc>().As<IViewFor<DataCreatorUc>>();
+            _builder.RegisterType<DataCreatorUc>().As<IViewFor<DataCreatorVm>>();
             
         }
 
